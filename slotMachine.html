@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #slotMachine {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            overflow: hidden;
+            position: relative;
+        }
+        #reel {
+            position: absolute;
+            width: 100%;
+            animation: spin 1s infinite linear;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            border-bottom: 1px solid #ccc;
+        }
+        @keyframes spin {
+            from {
+                top: 0;
+            }
+            to {
+                top: -2000px; /* Adjust this value based on the number of items */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="slotMachine">
+    <div id="reel">
+        <div class="item">🍔</div>
+        <div class="item">🍕</div>
+        <div class="item">🍣</div>
+        <div class="item">🍦</div>
+        <div class="item">🍩</div>
+        <div class="item">🍪</div>
+        <div class="item">🍫</div>
+        <div class="item">🍬</div>
+        <div class="item">🍭</div>
+        <div class="item">🍮</div>
+        <div class="item">🍯</div>
+        <div class="item">🍞</div>
+        <div class="item">🍎</div>
+        <div class="item">🍓</div>
+        <div class="item">🍇</div>
+        <div class="item">🍉</div>
+        <div class="item">🍊</div>
+        <div class="item">🍋</div>
+        <div class="item">🍌</div>
+        <div class="item">🍍</div>
+    </div>
+</div>
+
+<button onclick="stopReel()">Stop</button>
+
+<script>
+    function stopReel() {
+        var reel = document.getElementById('reel');
+        reel.style.animationPlayState = 'paused';
+    }
+</script>
+
+</body>
+</html>
